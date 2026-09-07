@@ -12,7 +12,12 @@ public interface CartItemRepo extends JpaRepository<CartItem,Integer> {
                Product product
          );
 
-         List<CartItem> findByCart(Cart cart);
+        List<CartItem> findByCart(Cart cart);
+
+        // make sure to keep the products same in cart page when its quantity is updated
+        List<CartItem> findByCartOrderByCartItemIdAsc(Cart cart);
+
+        
 
          void deleteByCart(Cart cart);
 

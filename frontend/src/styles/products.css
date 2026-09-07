@@ -1,0 +1,378 @@
+/* =========================
+   Products Page
+========================= */
+
+.products-page {
+    min-height: 100vh;
+
+    background-color: #eaeded;
+
+    color: #0f1111;
+
+    padding-bottom: 50px;
+}
+
+
+/* =========================
+   Header
+========================= */
+
+.products-header {
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding: 28px 35px 20px;
+
+    text-align: left;
+}
+
+.products-header h1 {
+    margin: 0;
+
+    color: #0f1111;
+
+    font-size: 30px;
+
+    font-weight: 600;
+}
+
+.products-header p {
+    margin: 7px 0 0;
+
+    color: #565959;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   Products Grid
+========================= */
+
+.products-grid {
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding: 5px 35px 50px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 14px;
+}
+
+
+/* =========================
+   Product Card
+========================= */
+
+.product-card {
+    min-width: 0;
+
+    background-color: #ffffff;
+
+    border: 1px solid #d5d9d9;
+
+    border-radius: 4px;
+
+    overflow: hidden;
+
+    transition:
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.product-card:hover {
+    border-color: #a2a6ac;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================
+   Card Content
+========================= */
+
+.product-card-content {
+    padding: 20px;
+}
+
+
+/* =========================
+   Company
+========================= */
+
+.product-company {
+    display: block;
+
+    margin-bottom: 9px;
+
+    padding: 0;
+
+    background: transparent;
+
+    color: #007185;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+
+    letter-spacing: 0.2px;
+}
+
+
+/* =========================
+   Product Name
+========================= */
+
+.product-name {
+    margin: 0 0 18px;
+
+    min-height: 58px;
+
+    color: #0f1111;
+
+    font-size: 18px;
+
+    line-height: 1.35;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: color 0.15s ease;
+}
+
+.product-card:hover .product-name {
+    color: #007185;
+}
+
+
+/* =========================
+   Price Section
+========================= */
+
+.product-price-section {
+    display: flex;
+
+    align-items: baseline;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 18px;
+
+    padding-top: 14px;
+
+    border-top: 1px solid #eaeded;
+}
+
+
+/* Selling Price */
+
+.product-price {
+    margin: 0;
+
+    color: #0f1111;
+
+    font-size: 25px;
+
+    font-weight: 600;
+
+    line-height: 1.2;
+}
+
+
+/* Original Price */
+
+.product-original-price {
+    color: #565959;
+
+    font-size: 13px;
+
+    text-decoration: line-through;
+}
+
+
+/* =========================
+   Details Button
+========================= */
+
+.details-button {
+    width: 100%;
+
+    min-height: 40px;
+
+    padding: 9px 16px;
+
+    border: 1px solid #ff9900;
+
+    border-radius: 20px;
+
+    background-color: #ff9900;
+
+    color: #111111;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.details-button:hover {
+    background-color: #ffad33;
+
+    border-color: #ffad33;
+
+    box-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.12);
+}
+
+.details-button:active {
+    background-color: #e88b00;
+
+    border-color: #e88b00;
+
+    box-shadow: none;
+}
+
+
+/* =========================
+   Tablet
+========================= */
+
+@media (max-width: 1100px) {
+
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+
+        padding-left: 25px;
+
+        padding-right: 25px;
+    }
+
+    .products-header {
+        padding-left: 25px;
+
+        padding-right: 25px;
+    }
+}
+
+
+/* =========================
+   Small Tablet
+========================= */
+
+@media (max-width: 800px) {
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+    .products-header h1 {
+        font-size: 27px;
+    }
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 550px) {
+
+    .products-page {
+        padding-bottom: 30px;
+    }
+
+    .products-header {
+        padding: 22px 14px 15px;
+    }
+
+    .products-header h1 {
+        font-size: 24px;
+    }
+
+    .products-header p {
+        font-size: 13px;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr 1fr;
+
+        padding: 5px 10px 30px;
+
+        gap: 10px;
+    }
+
+    .product-card-content {
+        padding: 15px;
+    }
+
+    .product-company {
+        font-size: 11px;
+    }
+
+    .product-name {
+        min-height: 65px;
+
+        margin-bottom: 14px;
+
+        font-size: 15px;
+    }
+
+    .product-price-section {
+        gap: 5px;
+
+        margin-bottom: 14px;
+
+        padding-top: 11px;
+    }
+
+    .product-price {
+        font-size: 20px;
+    }
+
+    .product-original-price {
+        font-size: 11px;
+    }
+
+    .details-button {
+        min-height: 36px;
+
+        padding: 7px 10px;
+
+        font-size: 12px;
+    }
+}
+
+
+/* =========================
+   Very Small Screens
+========================= */
+
+@media (max-width: 360px) {
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-name {
+        min-height: auto;
+    }
+}

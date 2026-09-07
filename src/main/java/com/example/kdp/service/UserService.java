@@ -68,7 +68,6 @@ public class UserService {
                   user.setName(dto.getName());
                   user.setEmail(dto.getEmail());
                   user.setPassword(dto.getPassword());
-                  user.setRole(dto.getRole());
 
                   userRepo.save(user);
 
@@ -122,4 +121,22 @@ public class UserService {
        public List<User> getInactiveUsers() {
           return userRepo.findByActiveFalse();
        }
+
+       public String login(String email, String password) {
+              User user = userRepo.findByEmail(email);
+              
+              if(user == null) {
+                   throw new UserNotFoundException("Account does not exist");
+              }
+
+              if(!user.getPassword().equals(password)) {
+                   throw new RuntimeException("Invalid password");
+              }
+
+              if(!user.isActive()) {
+                   throw new RuntimeException("Account is inactive");
+              }
+
+              return "login in successful";
+       } 
 }

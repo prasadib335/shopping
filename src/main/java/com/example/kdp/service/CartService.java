@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.kdp.repository.CartItemRepo;
 import com.example.kdp.repository.CartRepo;
@@ -17,7 +18,6 @@ import com.example.kdp.entity.Product;
 import com.example.kdp.entity.User;
 import com.example.kdp.exception.CartItemNotFoundException;
 import com.example.kdp.exception.CartNotFoundException;
-import com.example.kdp.exception.EmptyCartException;
 import com.example.kdp.exception.ProductNotFoundException;
 import com.example.kdp.exception.UserNotFoundException;
 
@@ -129,7 +129,7 @@ public class CartService {
                         new CartNotFoundException("User's Cart Not Found")
                     );  
 
-                  List<CartItem> cartItems = cartItemRepo.findByCart(cart);
+                  List<CartItem> cartItems = cartItemRepo.findByCartOrderByCartItemIdAsc(cart);
 
                   CartDto dto = new CartDto();
                   
@@ -183,19 +183,21 @@ public class CartService {
              int userId,
              int productId
          ) {
-              Product product = 
-                     productRepo.findById(productId)
-                     .orElseThrow(()->
-                          new ProductNotFoundException("Product with id " + productId + " not found")
-                    );
-            
-              Cart cart = 
+
+                 Cart cart = 
                      cartRepo.findByUserUserId(userId)
                      .orElseThrow(()->
                        new CartNotFoundException("Cart Not Found")
                     );
              
 
+              Product product = 
+                     productRepo.findById(productId)
+                     .orElseThrow(()->
+                          new ProductNotFoundException("Product with id " + productId + " not found")
+                    );
+            
+           
               CartItem existedCartItem = 
                        cartItemRepo.findByCartAndProduct(cart, product);
 
@@ -250,6 +252,7 @@ public class CartService {
               return "Quantity decreased successfully";
             }
 
+            @Transactional
             public void clearCart(int userId) {
                     Cart cart = 
                          cartRepo.findByUserUserId(userId)

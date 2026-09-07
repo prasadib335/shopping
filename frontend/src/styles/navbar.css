@@ -1,0 +1,218 @@
+/* navbar.css */
+
+.navbar {
+    height: 64px;
+    padding: 0 40px;
+
+    background-color: #131921;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+}
+
+
+/* Logo */
+
+.navbar-logo {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    transition: color 0.2s ease;
+}
+
+.navbar-logo:hover {
+    color: #ff9900;
+}
+
+
+/* Right side */
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* Profile */
+
+.profile-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    background-color: transparent;
+    color: white;
+
+    border: 1px solid transparent;
+    border-radius: 4px;
+
+    padding: 5px 8px;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.profile-button:hover {
+    border-color: #ffffff;
+    background-color: #232f3e;
+}
+
+
+/* Profile icon */
+
+.profile-icon {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #e7e9ec;
+
+    font-size: 20px;
+}
+
+
+/* Profile information */
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1.1;
+}
+
+.profile-greeting {
+    font-size: 11px;
+    color: #dddddd;
+}
+
+.profile-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+
+/* Buttons */
+
+.nav-button {
+    border: 1px solid transparent;
+
+    padding: 9px 15px;
+
+    border-radius: 5px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.15s ease;
+}
+
+.nav-button:hover {
+    transform: translateY(-1px);
+}
+
+.nav-button:active {
+    transform: translateY(0);
+}
+
+
+/* Orders */
+
+.orders-button {
+    background-color: transparent;
+
+    color: #ffffff;
+
+    border-color: #6b7280;
+}
+
+.orders-button:hover {
+    background-color: #232f3e;
+
+    border-color: #ffffff;
+}
+
+
+/* Cart */
+
+.cart-button {
+    background-color: #ff9900;
+
+    color: #111827;
+
+    border-color: #ff9900;
+
+    font-weight: 700;
+}
+
+.cart-button:hover {
+    background-color: #ffad33;
+
+    border-color: #ffad33;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        height: 60px;
+        padding: 0 15px;
+    }
+
+    .navbar-actions {
+        gap: 6px;
+    }
+
+    .profile-info {
+        display: none;
+    }
+
+    .profile-button {
+        padding: 4px;
+    }
+
+    .profile-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+    }
+
+    .nav-button {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    .navbar-logo {
+        font-size: 20px;
+    }
+}
