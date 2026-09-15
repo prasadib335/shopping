@@ -27,53 +27,53 @@ const cartSlice = createSlice({
                         state.error = null;
                         
                 })
-                .addCase(fetchCart.rejected,(state,action) => {
+                .addCase(fetchCart.rejected,(state) => {
                        state.error = "something went wrong";
                        state.loading = false;
                 })
-                .addCase(fetchCart.pending,(state,action) => {
+                .addCase(fetchCart.pending,(state) => {
                        state.loading = true;
                 });
 
-                builder.addCase(addQuantity.fulfilled,(state,action) => {
+                builder.addCase(addQuantity.fulfilled,(state) => {
                         state.error = null;
                 })
-                .addCase(addQuantity.rejected,(state,action) => {
+                .addCase(addQuantity.rejected,(state) => {
                         state.error = "something went wrong";
                 })
 
-                builder.addCase(removeQuantity.fulfilled,(state,action) => {
+                builder.addCase(removeQuantity.fulfilled,(state) => {
                         state.error = null;
                 })
-                .addCase(removeQuantity.rejected,(state,action) => {
+                .addCase(removeQuantity.rejected,(state) => {
                         state.error = "something went wrong";
                 })
 
-                builder.addCase(deleteFromCart.fulfilled,(state,action) => {
+                builder.addCase(deleteFromCart.fulfilled,(state) => {
                         state.error = null;
                 })
-                .addCase(deleteFromCart.rejected,(state,action) => {
+                .addCase(deleteFromCart.rejected,(state) => {
                         state.error = "something went wrong";
                 })
 
-                builder.addCase(addProductToCart.fulfilled,(state,action) => {
+                builder.addCase(addProductToCart.fulfilled,(state) => {
                         state.error = null;
                 })
-                .addCase(addProductToCart.rejected,(state,action) => {
+                .addCase(addProductToCart.rejected,(state) => {
                         state.error = "something went wrong";
                 })
 
-                builder.addCase(clearProductFromCart.fulfilled,(state,action) => {
+                builder.addCase(clearProductFromCart.fulfilled,(state) => {
                         state.error = null;
                 })
-                .addCase(clearProductFromCart.rejected,(state,action) => {
+                .addCase(clearProductFromCart.rejected,(state) => {
                         state.error = "something went wrong";
                 })
 
-                builder.addCase(clearAllProductsFromCart.fulfilled,(state,action) => {
+                builder.addCase(clearAllProductsFromCart.fulfilled,(state) => {
                         state.error = null;
                 })
-                .addCase(clearAllProductsFromCart.rejected,(state,action) => {
+                .addCase(clearAllProductsFromCart.rejected,(state) => {
                         state.error = "something went wrong";
                 })
    

@@ -1,7 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 import { useNavigate } from "react-router";
-import type { Order } from "../types/Order";
-import {getOrders}  from "../api/orderApi";
 import NavBar from "../components/NavBar";
 import "../styles/orders.css";
 import { useDispatch, useSelector } from "react-redux";

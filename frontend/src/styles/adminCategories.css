@@ -1,0 +1,480 @@
+/* =========================================
+   ADMIN CATEGORIES PAGE
+========================================= */
+
+.admin-categories {
+    min-height: 100vh;
+    padding: 32px;
+    background-color: #f5f6fa;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.admin-categories .categories-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 28px;
+}
+
+.admin-categories .categories-header h1 {
+    margin: 0 0 6px;
+
+    font-size: 28px;
+    font-weight: 600;
+
+    color: #1f2937;
+}
+
+.admin-categories .categories-header p {
+    margin: 0;
+
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.admin-categories .categories-header a {
+    padding: 9px 15px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+
+    background-color: #ffffff;
+
+    color: #374151;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: background-color 0.2s ease;
+}
+
+.admin-categories .categories-header a:hover {
+    background-color: #f3f4f6;
+}
+
+
+/* =========================================
+   ERROR
+========================================= */
+
+.admin-categories .categories-error {
+    margin: 0 0 20px;
+    padding: 12px 16px;
+
+    border: 1px solid #fecaca;
+    border-radius: 6px;
+
+    background-color: #fee2e2;
+
+    color: #b91c1c;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   ADD CATEGORY CARD
+========================================= */
+
+.admin-categories .add-category-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 28px;
+    padding: 22px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.admin-categories .add-category-card h2 {
+    margin: 0 0 5px;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    color: #1f2937;
+}
+
+.admin-categories .add-category-card p {
+    margin: 0;
+
+    font-size: 13px;
+    color: #6b7280;
+}
+
+
+/* =========================================
+   CATEGORY FORM
+========================================= */
+
+.admin-categories .category-form {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    min-width: 400px;
+}
+
+.admin-categories .category-form input {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 10px 12px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+
+    background-color: #ffffff;
+
+    color: #111827;
+
+    font-size: 14px;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.admin-categories .category-form input::placeholder {
+    color: #9ca3af;
+}
+
+.admin-categories .category-form input:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+/* =========================================
+   ADD BUTTON
+========================================= */
+
+.admin-categories .category-form button {
+    padding: 10px 16px;
+
+    border: 1px solid #2563eb;
+    border-radius: 6px;
+
+    background-color: #2563eb;
+
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition: background-color 0.2s ease;
+}
+
+.admin-categories .category-form button:hover {
+    background-color: #1d4ed8;
+}
+
+
+/* =========================================
+   CATEGORIES CARD
+========================================= */
+
+.admin-categories .categories-card {
+    background-color: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   CARD HEADER
+========================================= */
+
+.admin-categories .card-header {
+    padding: 20px 22px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.admin-categories .card-header h2 {
+    margin: 0 0 4px;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    color: #1f2937;
+}
+
+.admin-categories .card-header p {
+    margin: 0;
+
+    font-size: 13px;
+    color: #6b7280;
+}
+
+
+/* =========================================
+   EMPTY / LOADING MESSAGE
+========================================= */
+
+.admin-categories .categories-message {
+    margin: 0;
+    padding: 30px 22px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   CATEGORY TABLE
+========================================= */
+
+.admin-categories .categories-table {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+/* =========================================
+   CATEGORY ROW
+========================================= */
+
+.admin-categories .category-row {
+    display: grid;
+
+    grid-template-columns:
+        100px
+        1fr
+        220px;
+
+    align-items: center;
+
+    min-width: 600px;
+
+    border-bottom: 1px solid #f1f1f1;
+}
+
+
+/* =========================================
+   TABLE HEADER
+========================================= */
+
+.admin-categories .category-heading {
+    background-color: #f9fafb;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.admin-categories .category-heading span {
+    padding: 15px 18px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    color: #4b5563;
+}
+
+
+/* =========================================
+   TABLE CELLS
+========================================= */
+
+.admin-categories .category-row:not(.category-heading) > span {
+    padding: 15px 18px;
+
+    font-size: 14px;
+
+    color: #374151;
+}
+
+
+/* =========================================
+   CATEGORY ID
+========================================= */
+
+.admin-categories
+.category-row:not(.category-heading)
+> span:first-child {
+    color: #6b7280;
+
+    font-weight: 500;
+}
+
+
+/* =========================================
+   CATEGORY NAME
+========================================= */
+
+.admin-categories .category-name {
+    color: #111827 !important;
+
+    font-weight: 500;
+}
+
+
+/* =========================================
+   ROW HOVER
+========================================= */
+
+.admin-categories
+.category-row:not(.category-heading):hover {
+    background-color: #f9fafb;
+}
+
+
+/* =========================================
+   ACTIONS
+========================================= */
+
+.admin-categories .category-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 15px 18px !important;
+}
+
+
+/* =========================================
+   COMMON ACTION BUTTON
+========================================= */
+
+.admin-categories .category-actions button {
+    padding: 7px 13px;
+
+    border-radius: 5px;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+/* =========================================
+   EDIT BUTTON
+========================================= */
+
+.admin-categories .edit-category-btn {
+    color: #2563eb;
+
+    background-color: #eff6ff;
+
+    border: 1px solid #bfdbfe;
+}
+
+.admin-categories .edit-category-btn:hover {
+    background-color: #dbeafe;
+}
+
+
+/* =========================================
+   DELETE BUTTON
+========================================= */
+
+.admin-categories .delete-category-btn {
+    color: #dc2626;
+
+    background-color: #fef2f2;
+
+    border: 1px solid #fecaca;
+}
+
+.admin-categories .delete-category-btn:hover {
+    background-color: #fee2e2;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 850px) {
+
+    .admin-categories {
+        padding: 24px;
+    }
+
+    .admin-categories .add-category-card {
+        align-items: stretch;
+
+        flex-direction: column;
+
+        gap: 18px;
+    }
+
+    .admin-categories .category-form {
+        min-width: 0;
+
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .admin-categories {
+        padding: 20px;
+    }
+
+    .admin-categories .categories-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .admin-categories .categories-header h1 {
+        font-size: 24px;
+    }
+
+    .admin-categories .category-form {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .admin-categories .category-form input,
+    .admin-categories .category-form button {
+        width: 100%;
+    }
+
+    .admin-categories .categories-card {
+        border-radius: 8px;
+    }
+}

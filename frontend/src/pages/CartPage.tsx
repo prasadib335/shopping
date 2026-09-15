@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import "../styles/cart.css";
 
 import {
-    clearCart,
     placeOrder
 } from "../api/cartApi";
 
@@ -198,7 +197,7 @@ function CartPage() {
 
                             <button
                                 className="continue-shopping-button"
-                                onClick={() => navigate("/")}
+                                onClick={() => navigate("/products")}
                             >
                                 🛍️ Continue Shopping
                             </button>

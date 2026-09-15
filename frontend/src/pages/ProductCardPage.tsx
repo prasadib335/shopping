@@ -1,10 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import type { Product } from "../types/Product";
 import NavBar from "../components/NavBar";
 import "../styles/productDetails.css";
-import { getProductById } from "../api/productApi";
-import { addToCart } from "../api/cartApi";
 import { addProductToCart, fetchCart } from "../thunks/cartThunks";
 import { useDispatch, useSelector } from "react-redux";
 import type { AppDispatch, RootState } from "../store";

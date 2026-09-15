@@ -42,11 +42,55 @@ export async function updateUser(
 
 }
 
+export async function getUsers() : Promise<User[]> {
+       const response = await axios.get<User[]>(
+            "http://localhost:8080/user"
+       );
 
-//  @PutMapping("/{id}")
-//     public String updateUser(
-//             @PathVariable int id,
-//             @RequestBody UserRequestDto dto) {
+      console.log("USERS FROM BACKEND:", response.data);
 
-//         return userService.upDateUser(id, dto);
-//     }
+       return response.data;
+}
+
+export async function getActiveUsers() : Promise<User[]>{
+       const response = await axios.get<User[]>(
+            "http://localhost:8080/user/activeusers"
+
+       );
+
+       return response.data;
+}
+
+export async function getInactiveUsers(): Promise<User[]> {
+    const response = await axios.get<User[]>(
+        "http://localhost:8080/user/inactiveusers"
+    );
+
+    return response.data;
+}
+
+export async function deleteUser(userId: number): Promise<string> {
+    const response = await axios.patch<string>(
+        `http://localhost:8080/user/${userId}/delete`
+    );
+
+    return response.data;
+}
+
+export async function deactivateUser(userId: number): Promise<string> {
+    const response = await axios.patch<string>(
+        `http://localhost:8080/user/${userId}/deactivate`
+    );
+
+    return response.data;
+}
+
+export async function activateUser(userId: number): Promise<string> {
+    const response = await axios.patch<string>(
+        `http://localhost:8080/user/${userId}/activate`
+    );
+
+    return response.data;
+}
+
+

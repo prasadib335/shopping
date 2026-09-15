@@ -1,0 +1,479 @@
+/* =========================================
+   MANAGE USERS PAGE
+========================================= */
+
+.manage-users {
+    min-height: 100vh;
+    padding: 32px;
+    background-color: #f5f6fa;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.manage-users .page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 28px;
+}
+
+.manage-users .page-header h1 {
+    margin: 0 0 6px;
+
+    font-size: 28px;
+    font-weight: 600;
+
+    color: #1f2937;
+}
+
+.manage-users .page-header p {
+    margin: 0;
+
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.manage-users .page-header a {
+    padding: 9px 15px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+
+    background-color: #ffffff;
+
+    color: #374151;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: background-color 0.2s ease;
+}
+
+.manage-users .page-header a:hover {
+    background-color: #f3f4f6;
+}
+
+
+/* =========================================
+   ERROR MESSAGE
+========================================= */
+
+.manage-users > p[role="alert"] {
+    margin: 0 0 20px;
+    padding: 12px 16px;
+
+    border: 1px solid #fecaca;
+    border-radius: 6px;
+
+    background-color: #fee2e2;
+
+    color: #b91c1c;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   USER SUMMARY CARDS
+========================================= */
+
+.manage-users .user-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 28px;
+}
+
+.manage-users .user-summary > div {
+    display: flex;
+    flex-direction: column;
+
+    padding: 22px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.manage-users .user-summary strong {
+    margin-bottom: 6px;
+
+    font-size: 26px;
+    font-weight: 600;
+
+    color: #111827;
+}
+
+.manage-users .user-summary span {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+
+/* =========================================
+   USERS CARD
+========================================= */
+
+.manage-users .users-card {
+    background-color: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   CARD HEADER
+========================================= */
+
+.manage-users .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 22px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.manage-users .card-header h2 {
+    margin: 0 0 4px;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    color: #1f2937;
+}
+
+.manage-users .card-header p {
+    margin: 0;
+
+    font-size: 13px;
+    color: #6b7280;
+}
+
+
+/* =========================================
+   EMPTY USERS MESSAGE
+========================================= */
+
+.manage-users .users-card > p {
+    margin: 0;
+    padding: 30px 22px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   USERS TABLE
+========================================= */
+
+.manage-users .users-table {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+/* =========================================
+   USER ROW
+========================================= */
+
+.manage-users .user-row {
+    display: grid;
+
+    /*
+       ID
+       Name
+       Email
+       Role
+       Status
+       Created
+       Actions
+    */
+    grid-template-columns:
+        70px
+        1.2fr
+        1.8fr
+        100px
+        110px
+        120px
+        190px;
+
+    align-items: center;
+
+    min-width: 950px;
+
+    border-bottom: 1px solid #f1f1f1;
+}
+
+
+/* =========================================
+   TABLE HEADER
+========================================= */
+
+.manage-users .user-heading {
+    background-color: #f9fafb;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.manage-users .user-heading span {
+    padding: 15px 16px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    color: #4b5563;
+}
+
+
+/* =========================================
+   TABLE CELLS
+========================================= */
+
+.manage-users .user-row > span {
+    padding: 15px 16px;
+
+    font-size: 14px;
+
+    color: #374151;
+
+    min-width: 0;
+}
+
+
+/* =========================================
+   USER ID
+========================================= */
+
+.manage-users .user-row:not(.user-heading) > span:first-child {
+    font-weight: 500;
+
+    color: #6b7280;
+}
+
+
+/* =========================================
+   USER NAME
+========================================= */
+
+.manage-users .user-row:not(.user-heading) > span:nth-child(2) {
+    font-weight: 500;
+
+    color: #111827;
+}
+
+
+/* =========================================
+   EMAIL
+========================================= */
+
+.manage-users .user-row:not(.user-heading) > span:nth-child(3) {
+    color: #4b5563;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   ROLE
+========================================= */
+
+.manage-users .user-row:not(.user-heading) > span:nth-child(4) {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+/* =========================================
+   ROW HOVER
+========================================= */
+
+.manage-users .user-row:not(.user-heading):hover {
+    background-color: #f9fafb;
+}
+
+
+/* =========================================
+   STATUS BADGES
+========================================= */
+
+.manage-users .status {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* ACTIVE */
+
+.manage-users .status.active {
+    background-color: #dcfce7;
+
+    color: #15803d;
+}
+
+
+/* INACTIVE */
+
+.manage-users .status.inactive {
+    background-color: #f3f4f6;
+
+    color: #6b7280;
+}
+
+
+/* =========================================
+   ACTION BUTTONS
+========================================= */
+
+.manage-users .user-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 15px 16px;
+}
+
+
+/* COMMON BUTTON */
+
+.manage-users .user-actions button {
+    padding: 7px 12px;
+
+    border-radius: 5px;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+/* =========================================
+   ACTIVATE / DEACTIVATE BUTTON
+========================================= */
+
+.manage-users .user-actions button:first-child {
+    color: #2563eb;
+
+    background-color: #eff6ff;
+
+    border: 1px solid #bfdbfe;
+}
+
+.manage-users .user-actions button:first-child:hover {
+    background-color: #dbeafe;
+}
+
+
+/* =========================================
+   DELETE BUTTON
+========================================= */
+
+.manage-users .user-actions button:last-child {
+    color: #dc2626;
+
+    background-color: #fef2f2;
+
+    border: 1px solid #fecaca;
+}
+
+.manage-users .user-actions button:last-child:hover {
+    background-color: #fee2e2;
+}
+
+
+/* =========================================
+   LOADING PAGE
+========================================= */
+
+.manage-users:not(.loaded) {
+    /* intentionally left simple */
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .manage-users {
+        padding: 24px;
+    }
+
+    .manage-users .user-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .manage-users .page-header {
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .manage-users {
+        padding: 20px;
+    }
+
+    .manage-users .page-header {
+        flex-direction: column;
+    }
+
+    .manage-users .page-header h1 {
+        font-size: 24px;
+    }
+
+    .manage-users .page-header a {
+        width: fit-content;
+    }
+
+    .manage-users .user-summary {
+        gap: 12px;
+    }
+
+    .manage-users .user-summary > div {
+        padding: 18px;
+    }
+
+    .manage-users .users-card {
+        border-radius: 8px;
+    }
+
+}

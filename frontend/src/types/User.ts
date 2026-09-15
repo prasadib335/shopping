@@ -26,3 +26,15 @@ export interface UpdateUser {
        email : string;
        password : string;
 }
+
+export interface UserState { 
+
+         users: User[];
+         activeUsers: User[]; 
+         inactiveUsers: User[]; 
+         singleUser: User | null;
+         loading: boolean; 
+         error: string | null;
+         message: string | null;
+
+}

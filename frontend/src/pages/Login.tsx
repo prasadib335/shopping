@@ -13,24 +13,25 @@ function Login() {
     });
 
     async function handleSubmit(
-            event: React.FormEvent<HTMLFormElement>
-    ) {
-           event.preventDefault();
+    event: React.FormEvent<HTMLFormElement>
+) {
+    event.preventDefault();
 
-           try {
-                 const response = await userLogin(formData);
+    try {
+        const response = await userLogin(formData);
 
-                 alert("Welcome back! You’re now signed in.");
+        console.log("Login response:", response);
 
-                 navigate('/products');
+        alert("Welcome back! You’re now signed in.");
 
-           }catch(error) {
-             
-                alert("Login failed. Please check your email and password.");
+        navigate("/products");
+    } catch (error) {
 
-                console.log("something went wrong ",error);
-           }
+        alert("Login failed. Please check your email and password.");
+
+        console.log("something went wrong ", error);
     }
+}
     return (
         <div className="login-page">
             <div className="login-container">

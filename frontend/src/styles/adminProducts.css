@@ -1,0 +1,202 @@
+/* ==============================
+   Admin Products Page
+   ============================== */
+
+.admin-products {
+    min-height: 100vh;
+    padding: 32px;
+    background-color: #f5f6fa;
+}
+
+
+/* ==============================
+   Header
+   ============================== */
+
+.admin-products h1 {
+    margin: 0 0 8px;
+    font-size: 28px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+
+/* ==============================
+   Navigation
+   ============================== */
+
+.admin-products-nav {
+    margin-bottom: 28px;
+}
+
+.admin-products-nav a {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.admin-products-nav a:hover {
+    text-decoration: underline;
+}
+
+
+/* ==============================
+   Messages
+   ============================== */
+
+.admin-products-message {
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    color: #6b7280;
+}
+
+.admin-products-error {
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+}
+
+
+/* ==============================
+   Table Container
+   ============================== */
+
+.admin-products-table-container {
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    overflow-x: auto;
+}
+
+
+/* ==============================
+   Table
+   ============================== */
+
+.admin-products table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-products thead {
+    background-color: #f9fafb;
+}
+
+.admin-products th {
+    padding: 15px 18px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 600;
+    color: #4b5563;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.admin-products td {
+    padding: 16px 18px;
+    font-size: 14px;
+    color: #374151;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+
+/* ==============================
+   Table Hover
+   ============================== */
+
+.admin-products tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+.admin-products tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* ==============================
+   Product Name
+   ============================== */
+
+.admin-products td:first-child {
+    font-weight: 500;
+    color: #111827;
+}
+
+
+/* ==============================
+   Price
+   ============================== */
+
+.admin-products td:nth-child(3) {
+    font-weight: 600;
+    color: #111827;
+}
+
+
+/* ==============================
+   Action Buttons
+   ============================== */
+
+.admin-products button {
+    padding: 7px 13px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+
+/* Edit */
+
+.admin-products button:first-child {
+    color: #2563eb;
+    background-color: #eff6ff;
+    border: 1px solid #bfdbfe;
+}
+
+.admin-products button:first-child:hover {
+    background-color: #dbeafe;
+}
+
+
+/* Delete */
+
+.admin-products button:last-child {
+    color: #dc2626;
+    background-color: #fef2f2;
+    border: 1px solid #fecaca;
+}
+
+.admin-products button:last-child:hover {
+    background-color: #fee2e2;
+}
+
+
+/* ==============================
+   Responsive
+   ============================== */
+
+@media (max-width: 768px) {
+
+    .admin-products {
+        padding: 20px;
+    }
+
+    .admin-products h1 {
+        font-size: 24px;
+    }
+
+    .admin-products-table-container {
+        overflow-x: auto;
+    }
+
+    .admin-products table {
+        min-width: 650px;
+    }
+}

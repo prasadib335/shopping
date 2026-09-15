@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "../styles/products.css";
-import { data, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import NavBar from "../components/NavBar";
 import { useDispatch, useSelector } from "react-redux";
 import type { AppDispatch, RootState } from "../store";
 import { fetchProducts } from "../thunks/productThunk";
+import { getProducts } from "../api/productApi";
 
 function ProductsPage() {
   // const [products, setProducts] = useState<Product[]>([]);
@@ -17,13 +18,16 @@ function ProductsPage() {
 
     useEffect(() => {
             dispatch(fetchProducts());
+            console.log(getProducts());
     },[dispatch]);
 
-    if(!loading) {
+    if(loading) {
           return(
              <><h1>Loading...</h1></>
           )
     }
+
+
     
     return (
         <div className="products-page">

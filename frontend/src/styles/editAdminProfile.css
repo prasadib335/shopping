@@ -1,0 +1,291 @@
+/* =========================================
+   EDIT ADMIN PROFILE
+========================================= */
+
+.edit-admin-profile-page {
+    min-height: 100vh;
+
+    padding: 40px;
+
+    background-color: #f5f6fa;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.edit-profile-header {
+    width: 600px;
+
+    max-width: 100%;
+
+    margin: 0 auto 25px;
+}
+
+.edit-profile-header h1 {
+    margin: 0 0 6px;
+
+    font-size: 28px;
+
+    font-weight: 600;
+
+    color: #1f2937;
+}
+
+.edit-profile-header p {
+    margin: 0;
+
+    font-size: 14px;
+
+    color: #6b7280;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.edit-admin-profile-form {
+    width: 600px;
+
+    max-width: 100%;
+
+    margin: 0 auto;
+
+    padding: 30px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.05);
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   ERROR
+========================================= */
+
+.edit-admin-profile-error {
+    margin: 0 0 20px;
+
+    padding: 12px 16px;
+
+    border: 1px solid #fecaca;
+
+    border-radius: 6px;
+
+    background-color: #fee2e2;
+
+    color: #b91c1c;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   FORM GROUP
+========================================= */
+
+.edit-admin-profile-form .form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    margin-bottom: 20px;
+}
+
+.edit-admin-profile-form .form-group label {
+    margin-bottom: 7px;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    color: #374151;
+}
+
+
+/* =========================================
+   INPUT
+========================================= */
+
+.edit-admin-profile-form .form-group input {
+    width: 100%;
+
+    padding: 11px 12px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 6px;
+
+    background-color: #ffffff;
+
+    color: #111827;
+
+    font-size: 14px;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.edit-admin-profile-form
+.form-group input:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.1);
+}
+
+
+/* =========================================
+   DISABLED ROLE
+========================================= */
+
+.edit-admin-profile-form
+.form-group input:disabled {
+
+    background-color: #f3f4f6;
+
+    color: #6b7280;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================
+   HELP TEXT
+========================================= */
+
+.edit-admin-profile-form
+.form-group small {
+
+    margin-top: 6px;
+
+    font-size: 12px;
+
+    color: #9ca3af;
+}
+
+
+/* =========================================
+   ACTIONS
+========================================= */
+
+.edit-admin-profile-form .form-actions {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 10px;
+
+    padding-top: 10px;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.edit-admin-profile-form button {
+
+    padding: 10px 18px;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+/* =========================================
+   CANCEL
+========================================= */
+
+.edit-admin-profile-form .cancel-btn {
+
+    border: 1px solid #d1d5db;
+
+    background-color: #ffffff;
+
+    color: #374151;
+}
+
+.edit-admin-profile-form .cancel-btn:hover {
+
+    background-color: #f3f4f6;
+}
+
+
+/* =========================================
+   SAVE
+========================================= */
+
+.edit-admin-profile-form .save-btn {
+
+    border: 1px solid #2563eb;
+
+    background-color: #2563eb;
+
+    color: #ffffff;
+}
+
+.edit-admin-profile-form .save-btn:hover {
+
+    background-color: #1d4ed8;
+}
+
+.edit-admin-profile-form .save-btn:disabled {
+
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .edit-admin-profile-page {
+
+        padding: 20px;
+    }
+
+    .edit-profile-header h1 {
+
+        font-size: 24px;
+    }
+
+    .edit-admin-profile-form {
+
+        padding: 22px;
+    }
+
+}

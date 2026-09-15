@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 import { useParams } from "react-router";
 import NavBar from "../components/NavBar";
 import "../styles/orderDetails.css";

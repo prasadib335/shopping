@@ -29,3 +29,19 @@ export interface ProductState {
        error : string  | null;
 
 }
+
+export interface CreateProduct {
+    productName: string;
+    companyName: string;
+    sellingPrice: number;
+    originalPrice: number;
+}
+
+export interface UpdateProduct { 
+
+      productName: string; 
+      companyName: string; 
+      sellingPrice: number; 
+      originalPrice: number;
+      
+ }
