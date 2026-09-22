@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
+import api from "../../api/axios";
 
 import "../../styles/adminCategories.css";
 
@@ -31,17 +32,11 @@ function AdminCategories() {
 
                 setLoading(true);
 
-                const response = await fetch(
-                    "http://localhost:8080/api/categories"
+                const response = await api.get<Category[]>(
+                    "/api/categories"
                 );
 
-                if (!response.ok) {
-                    throw new Error(
-                        "Unable to fetch categories"
-                    );
-                }
-
-                const data = await response.json();
+                const data = response.data;
 
                 setCategories(data);
 
@@ -81,29 +76,14 @@ function AdminCategories() {
 
         try {
 
-            const response = await fetch(
-                "http://localhost:8080/api/categories",
+            const response = await api.post<Category>(
+                "/api/categories",
                 {
-                    method: "POST",
-
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-
-                    body: JSON.stringify({
-                        categoryName: categoryName.trim()
-                    })
+                    categoryName: categoryName.trim()
                 }
             );
 
-            if (!response.ok) {
-                throw new Error(
-                    "Unable to add category"
-                );
-            }
-
-            const newCategory =
-                await response.json();
+            const newCategory = response.data;
 
             setCategories((previous) => [
                 ...previous,
@@ -142,18 +122,9 @@ function AdminCategories() {
 
         try {
 
-            const response = await fetch(
-                `http://localhost:8080/api/categories/${categoryId}`,
-                {
-                    method: "DELETE"
-                }
+            await api.delete(
+                `/api/categories/${categoryId}`
             );
-
-            if (!response.ok) {
-                throw new Error(
-                    "Unable to delete category"
-                );
-            }
 
             setCategories((previous) =>
                 previous.filter(

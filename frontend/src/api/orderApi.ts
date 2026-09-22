@@ -1,12 +1,12 @@
-import axios from "axios";
+import api from "./axios";
 import  type {Order} from "../types/Order";
 import type { OrderItem } from "../types/OrderItem";
 // get order items
 
 export async function getOrders(userId : number) : Promise<Order[]> {
 
-    const response = await axios.get<Order[]>(
-                   `http://localhost:8080/order/${userId}`);
+    const response = await api.get<Order[]>(
+                   `/order/${userId}`);
 
     return response.data;
 
@@ -16,8 +16,8 @@ export async function getOrderItems(
     orderId: number
 ): Promise<OrderItem[]> {
 
-    const response = await axios.get<OrderItem[]>(
-        `http://localhost:8080/order/orderitems/${orderId}`
+    const response = await api.get<OrderItem[]>(
+        `/order/orderitems/${orderId}`
     );
 
     return response.data;

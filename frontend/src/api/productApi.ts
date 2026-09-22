@@ -1,10 +1,10 @@
-import axios from "axios";
+import api from "./axios";
 import type { CreateProduct, Product, Products ,UpdateProduct } from "../types/Product";
 // getting all product 
 
 export async function getProducts() : Promise<Products[]> {
-      const response = await axios.get<Products[]>(
-          "http://localhost:8080/products"
+      const response = await api.get<Products[]>(
+          "/products"
       );
 
       return response.data;
@@ -13,8 +13,8 @@ export async function getProducts() : Promise<Products[]> {
 // get single product
 
 export async function getProductById(id : number) : Promise<Product> {
-    const response = axios.get<Product>(
-        `http://localhost:8080/products/${id}`
+    const response = api.get<Product>(
+        `/products/${id}`
     );
 
     return (await response).data;
@@ -24,8 +24,8 @@ export async function createProduct(
     productData: CreateProduct
 ): Promise<Product> {
 
-    const response = await axios.post<Product>(
-        "http://localhost:8080/products",
+    const response = await api.post<Product>(
+        "/products",
         productData
     );
 
@@ -33,7 +33,7 @@ export async function createProduct(
 }
 
 export async function updateProduct( productId: number, productData: UpdateProduct ): Promise<Product> {
-     const response = await axios.put<Product>( `http://localhost:8080/products/${productId}`, productData ); 
+    const response = await api.put<Product>( `/products/${productId}`, productData ); 
 
      return response.data;
 }

@@ -1,15 +1,15 @@
-import axios from "axios";
+import api from "./axios";
 import type { Cart } from "../types/Cart";
 
 // get cart items
 
 export async function getCartItems(userId : number) : Promise<Cart> {
 
-        const response =  axios.get<Cart>(
-              `http://localhost:8080/cart/${userId}`
-        )
+          const response = await api.get<Cart>(
+                  `/cart/${userId}`
+          );
 
-        return (await response).data;
+          return response.data;
         
 }
 
@@ -20,11 +20,8 @@ export async function addToCart(
           productId : number,
           quantity : number
 ) : Promise<string> {
-       const response = await axios.post<string>(
-          `http://localhost:8080/cart/${userId}/add/${productId}/${quantity}`,
-           {
-                
-           }
+                 const response = await api.post<string>(
+                         `/cart/${userId}/add/${productId}/${quantity}`
        );
 
        return response.data;
@@ -34,8 +31,8 @@ export async function increaseQuantity(
         userId : number,
         productId : number
 ) : Promise<string> {
-        const response = await axios.put<string>(
-                `http://localhost:8080/cart/${userId}/increase/${productId}`
+        const response = await api.put<string>(
+                `/cart/${userId}/increase/${productId}`
         );
         
         return response.data;
@@ -47,8 +44,8 @@ export async function decreaseQuantity(
         userId : number,
         productId : number
 ) : Promise<string> {
-        const response = await axios.put<string>(
-                `http://localhost:8080/cart/${userId}/decrease/${productId}`
+        const response = await api.put<string>(
+                `/cart/${userId}/decrease/${productId}`
         );
 
         return response.data;
@@ -61,8 +58,8 @@ export async function removeFromCart(
         userId : number,
         productId : number
 ) :Promise<string> {
-        const response = await axios.delete(
-                `http://localhost:8080/cart/${userId}/remove/${productId}`
+        const response = await api.delete<string>(
+                `/cart/${userId}/remove/${productId}`
         );
 
         return response.data;
@@ -72,8 +69,8 @@ export async function removeFromCart(
 export async function clearCart(
         userId : number
 ) : Promise<string> {
-         const response = await axios.delete<string>(
-              `http://localhost:8080/cart/${userId}/clear`
+            const response = await api.delete<string>(
+                    `/cart/${userId}/clear`
          );
 
          return response.data;
@@ -82,8 +79,8 @@ export async function clearCart(
 // placing orders
 
 export async function placeOrder(userId : number) : Promise<string> {
-       const response =  await axios.post<string>(
-               `http://localhost:8080/order/placeorder/${userId}`
+       const response =  await api.post<string>(
+               `/order/placeorder/${userId}`
        );
 
        return response.data;

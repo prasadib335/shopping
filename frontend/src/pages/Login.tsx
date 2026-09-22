@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router";
 import '../styles/login.css';
 import { useState } from "react";
+import axios from "axios";
 import type { LoginRequest } from "../types/User";
 import { userLogin } from "../api/userApi";
 
@@ -11,14 +12,21 @@ function Login() {
              email : "",
              password : ""
     });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
 
     async function handleSubmit(
     event: React.FormEvent<HTMLFormElement>
 ) {
     event.preventDefault();
+    setErrorMessage("");
+    setIsSubmitting(true);
 
     try {
-        const response = await userLogin(formData);
+        const response = await userLogin({
+            email: formData.email.trim(),
+            password: formData.password
+        });
 
         console.log("Login response:", response);
 
@@ -26,10 +34,13 @@ function Login() {
 
         navigate("/products");
     } catch (error) {
+        const message = axios.isAxiosError(error) && typeof error.response?.data === "string"
+            ? error.response.data
+            : "Login failed. Please check your email and password.";
 
-        alert("Login failed. Please check your email and password.");
-
-        console.log("something went wrong ", error);
+        setErrorMessage(message);
+    } finally {
+        setIsSubmitting(false);
     }
 }
     return (
@@ -88,9 +99,15 @@ function Login() {
                             />
                         </div>
 
-                        <button type="submit">
-                            Sign in
+                        <button type="submit" disabled={isSubmitting}>
+                            {isSubmitting ? "Signing in..." : "Sign in"}
                         </button>
+
+                        {errorMessage && (
+                            <p role="alert" className="login-error">
+                                {errorMessage}
+                            </p>
+                        )}
 
                     </form>
 

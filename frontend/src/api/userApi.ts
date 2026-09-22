@@ -1,9 +1,9 @@
-import axios from "axios";
+import api from "./axios";
 import type { LoginRequest, RegisterUser, UpdateUser, User } from "../types/User";
 
 export async function userRegistration(userData : RegisterUser) : Promise<string> {
-         const response = await axios.post<string>(
-               "http://localhost:8080/user",
+           const response = await api.post<string>(
+               "/user",
                 userData
          );
 
@@ -11,8 +11,8 @@ export async function userRegistration(userData : RegisterUser) : Promise<string
 }
 
 export async function userLogin(userData : LoginRequest) : Promise<string>{
-        const response = await axios.post<string>(
-              "http://localhost:8080/user/login",
+          const response = await api.post<string>(
+              "/user/login",
                userData
         );
 
@@ -21,8 +21,8 @@ export async function userLogin(userData : LoginRequest) : Promise<string>{
 }
 
 export async function getUser(userId : number) : Promise<User> {
-       const response = await axios.get<User>(
-             `http://localhost:8080/user/${userId}`
+     const response = await api.get<User>(
+         `/user/${userId}`
        );
 
        return response.data;
@@ -33,8 +33,8 @@ export async function updateUser(
       userId : number,
       userData : UpdateUser
 ) : Promise<string> {
-      const response = await axios.put<string>(
-            `http://localhost:8080/user/${userId}`,
+    const response = await api.put<string>(
+        `/user/${userId}`,
             userData
       );
 
@@ -43,8 +43,8 @@ export async function updateUser(
 }
 
 export async function getUsers() : Promise<User[]> {
-       const response = await axios.get<User[]>(
-            "http://localhost:8080/user"
+      const response = await api.get<User[]>(
+          "/user"
        );
 
       console.log("USERS FROM BACKEND:", response.data);
@@ -53,8 +53,8 @@ export async function getUsers() : Promise<User[]> {
 }
 
 export async function getActiveUsers() : Promise<User[]>{
-       const response = await axios.get<User[]>(
-            "http://localhost:8080/user/activeusers"
+      const response = await api.get<User[]>(
+          "/user/activeusers"
 
        );
 
@@ -62,32 +62,32 @@ export async function getActiveUsers() : Promise<User[]>{
 }
 
 export async function getInactiveUsers(): Promise<User[]> {
-    const response = await axios.get<User[]>(
-        "http://localhost:8080/user/inactiveusers"
+    const response = await api.get<User[]>(
+        "/user/inactiveusers"
     );
 
     return response.data;
 }
 
 export async function deleteUser(userId: number): Promise<string> {
-    const response = await axios.patch<string>(
-        `http://localhost:8080/user/${userId}/delete`
+    const response = await api.patch<string>(
+        `/user/${userId}/delete`
     );
 
     return response.data;
 }
 
 export async function deactivateUser(userId: number): Promise<string> {
-    const response = await axios.patch<string>(
-        `http://localhost:8080/user/${userId}/deactivate`
+    const response = await api.patch<string>(
+        `/user/${userId}/deactivate`
     );
 
     return response.data;
 }
 
 export async function activateUser(userId: number): Promise<string> {
-    const response = await axios.patch<string>(
-        `http://localhost:8080/user/${userId}/activate`
+    const response = await api.patch<string>(
+        `/user/${userId}/activate`
     );
 
     return response.data;
